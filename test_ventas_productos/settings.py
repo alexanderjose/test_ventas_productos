@@ -11,10 +11,26 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# (test_ventas_productos/settings.py - 2 = test_ventas_productos/)
+ROOT_DIR = environ.Path(__file__) - 2
+APPS_DIR = ROOT_DIR.path('test_ventas_productos')
+# print(APPS_DIR)
+
+# Load operating system environment variables and then prepare to use them
+env = environ.Env()
+# set default values and casting
+# env = environ.Env(DEBUG=(bool, False),)
+
+# .env file, should load only in development environment
+READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
+
+env_file = str(ROOT_DIR.path('test_ventas_productos/.env'))
+env.read_env(env_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -37,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'test_ventas_productos.ventas',
 ]
 
 MIDDLEWARE = [
