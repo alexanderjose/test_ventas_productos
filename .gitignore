@@ -1,0 +1,12 @@
+.env/
+*.pyc
+__pycache__
+.env
+*.swp
+*.bak
+*.dat
+*.dir
+*.pid
+*.log
+*.xml
+*.csv
