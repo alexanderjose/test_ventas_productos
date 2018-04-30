@@ -54,6 +54,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'test_ventas_productos.ventas',
+    'rest_framework',
+    # 'test_ventas_productos.ventas',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +73,10 @@ ROOT_URLCONF = 'test_ventas_productos.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        # 'DIRS': [],
+        'DIRS': [
+            str(APPS_DIR.path('templates')),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,3 +153,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib
+# /staticfiles/#std:setting-STATICFILES_DIRS
+STATICFILES_DIRS = (
+    str(APPS_DIR.path('static')),
+)
+# print(str(APPS_DIR.path('static')))
+
+# See: https://docs.djangoproject.com/en/dev/ref/contrib
+# /staticfiles/#staticfiles-finders
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)

@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block title%}Dashboard{% endblock%}
+
+{% block content %}
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-12 col-md-8">.col-12 .col-md-8</div>
+    <div class="col-6 col-md-4">.col-6 .col-md-4</div>
+  </div> -->
+  <br><br>
+  <div class="row">
+    <!-- <div class="col-12 col-md-10">
+      <div id="container_pesos" class="col-6 col-md-6">
+        Grafico 01
+      </div>
+      <div id="container_unidades" class="col-6 col-md-6">
+        Grafico 02
+      </div>
+      <div class="col-6 col-md-6">
+        Grafico 03
+      </div>
+      <div class="col-6 col-md-6">
+        Grafico 04
+      </div>
+    </div> -->
+    <!-- <div class="col-12 col-md-10">
+      <div id="container_pesos" class="col-6 col-md-6">
+        Grafico 01
+      </div>
+    </div> -->
+    <div class="col-12 col-md-10">
+      <div id="container_pesos" class="col-6 col-md-6">
+        Grafico 01
+      </div>
+      <div id="container_unidades" class="col-6 col-md-6">
+        Grafico 02
+      </div>
+      <br><br><br>
+      <div id="container_descuentos" class="col-6 col-md-6">
+        Grafico 03
+      </div>
+      <div id="container_costos" class="col-6 col-md-6">
+        Grafico 04
+      </div>
+    </div>
+    <div class="col-6 col-md-2">
+      <select class="form-control fechas">
+        <option value="">Fechas</option>
+      </select>
+      <br>
+      <select class="form-control tiendas">
+        <option value="">Tiendas</option>
+      </select>
+      <br>
+      <select class="form-control marcas">
+        <option value="">Marcas</option>
+      </select>
+      <br>
+      <select class="form-control categorias">
+        <option value="">Categorias</option>
+      </select>
+      <br>
+      <select class="form-control subcategorias">
+        <option value="">SubCategorias</option>
+      </select>
+      <br>
+      <input class="btn btn-primary actualizar" type="button" value="Actualizar">
+    </div>
+  </div>
+</div>
+{% endblock %}
